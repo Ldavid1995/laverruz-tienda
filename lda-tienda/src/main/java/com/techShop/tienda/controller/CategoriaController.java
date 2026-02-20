@@ -20,8 +20,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/categoria")
 public class CategoriaController {
 
+
     private final CategoriaService categoriaService;
     private final MessageSource messageSource;
+
 
     public CategoriaController(CategoriaService categoriaService, MessageSource messageSource) {
         this.categoriaService = categoriaService;
@@ -29,8 +31,11 @@ public class CategoriaController {
     }
 
     @GetMapping("/listado")
+
     public String listado(Model model) {
+        
         var categorias = categoriaService.getCategorias(false);
+        
         model.addAttribute("categorias", categorias);
         model.addAttribute("totalCategorias", categorias.size());
         return "/categoria/listado";
