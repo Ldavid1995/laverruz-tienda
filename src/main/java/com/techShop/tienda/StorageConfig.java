@@ -1,5 +1,5 @@
 package com.techShop.tienda;
-
+        
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
@@ -22,7 +22,7 @@ public class StorageConfig {
 
     @Bean
     public Storage storage() throws IOException {
-        ClassPathResource resource = new ClassPathResource(jsonPath + File.separator + jsonFile);
+        ClassPathResource resource = new ClassPathResource(jsonPath +"/"+ jsonFile);
         try (InputStream inputStream = resource.getInputStream()) {
             GoogleCredentials credentials = GoogleCredentials.fromStream(inputStream);
             return StorageOptions.newBuilder().setCredentials(credentials).build().getService();
@@ -30,5 +30,3 @@ public class StorageConfig {
     }
     
 }
-    
-
