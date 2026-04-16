@@ -2,7 +2,6 @@
 package com.techShop.tienda.controller;
 
 import com.techShop.tienda.service.ProductoService;
-import java.math.BigDecimal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

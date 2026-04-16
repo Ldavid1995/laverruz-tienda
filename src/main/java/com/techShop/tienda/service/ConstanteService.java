@@ -1,7 +1,7 @@
-package com.tienda.service;
+package com.techShop.tienda.service;
 
+import com.techShop.tienda.repository.ConstanteRepository;
 import com.tienda.domain.Constante;
-import com.tienda.repository.ConstanteRepository;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;

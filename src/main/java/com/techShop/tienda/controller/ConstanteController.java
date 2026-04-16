@@ -1,7 +1,7 @@
-package com.tienda.controller;
+package com.techShop.tienda.controller;
 
+import com.techShop.tienda.service.ConstanteService;
 import com.tienda.domain.Constante;
-import com.tienda.service.ConstanteService;
 import jakarta.validation.Valid;
 import java.util.Locale;
 import java.util.NoSuchElementException;

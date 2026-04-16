@@ -1,8 +1,8 @@
 package com.techShop.tienda.controller;
 
 import com.techShop.tienda.domain.Usuario;
-
 import com.techShop.tienda.service.UsuarioService;
+import com.techShop.tienda.service.ConstanteService;
 import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @RequestMapping("/usuario_rol")
@@ -75,4 +76,27 @@ public class UsuarioRolController {
         // Redirige al /buscar para recargar los datos del usuario actualizado
         return "redirect:/usuario_rol/buscar?username=" + username;
     }
+    
+    // VISTA DE ROLES
+    @GetMapping("/role")
+    public String roles(Model model) {
+        var roles = usuarioService.getRolesNombres();
+        model.addAttribute("roles", roles);
+        model.addAttribute("totalRoles", roles.size());
+        return "usuario_rol/role";
+    }
+    
+    @Autowired
+    private ConstanteService constanteService;
+
+    @GetMapping("/ruta")
+    public String rutas(Model model) {
+        var lista = constanteService.getConstantes();
+
+        model.addAttribute("rutas", lista);
+        model.addAttribute("totalRutas", lista.size());
+
+        return "usuario_rol/ruta";
+    }
 }
+   

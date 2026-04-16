@@ -1,4 +1,4 @@
-package com.tienda.repository;
+package com.techShop.tienda.repository;
 
 import com.tienda.domain.Constante;
 import java.util.Optional;
